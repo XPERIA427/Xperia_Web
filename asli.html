@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Showcase</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background: #000;
+    overflow-x: hidden;
+  }
+
+  /* STAR BG */
+  .stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 
+      100px 200px #fff, 200px 300px #fff, 150px 100px #fff,
+      400px 200px #fff, 250px 400px #fff, 600px 500px #fff,
+      800px 300px #fff, 1000px 200px #fff, 1200px 400px #fff;
+    animation: moveStars 60s linear infinite;
+  }
+
+  .stars:after {
+    content: " ";
+    position: absolute;
+    top: -1000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 
+      100px 200px #fff, 200px 300px #fff, 150px 100px #fff,
+      400px 200px #fff, 250px 400px #fff, 600px 500px #fff,
+      800px 300px #fff, 1000px 200px #fff, 1200px 400px #fff;
+  }
+
+  @keyframes moveStars {
+    from { transform: translateY(0px); }
+    to { transform: translateY(1000px); }
+  }
+
+  /* Menu Icon */
+  .menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #b05cff;
+    z-index: 999;
+    text-shadow: 0 0 12px #b05cff;
+    user-select: none;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.95);
+    border-right: 1px solid #7a1cff;
+    padding: 80px 20px;
+    transition: .3s;
+    box-shadow: 0 0 15px #7a1cff55;
+    z-index: 998;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 80px 20px 40px;
+  }
+
+  h1 {
+    color: #b05cff;
+    text-shadow: 0 0 20px #b05cff;
+    margin-bottom: 40px;
+    font-size: 36px;
+  }
+
+  /* Card */
+  .card {
+    background: rgba(20, 20, 20, 0.7);
+    border: 1px solid #7a1cff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #7a1cff44;
+    padding: 20px;
+    width: 280px;
+    margin: 0 auto 40px auto;
+  }
+
+  .card iframe {
+    width: 100%;
+    height: 160px;
+    border: none;
+    border-radius: 15px;
+    background: #111;
+    margin-bottom: 15px;
+  }
+
+  .card h2 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .card a {
+    display: block;
+    width: 100%;
+    background: #7a1cff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: 0.2s;
+    box-shadow: 0 0 10px #7a1cff;
+  }
+
+  .card a:hover {
+    filter: brightness(1.5);
+    box-shadow: 0 0 20px #7a1cff;
+  }
+
+  /* INFO PAGE */
+  .info-section {
+    max-width: 500px;
+    background: rgba(20, 20, 20, 0.7);
+    border: 1px solid #7a1cff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #7a1cff44;
+    padding: 20px;
+    margin: 0 auto 40px;
+    color: white;
+  }
+
+  .info-item {
+    margin-bottom: 20px;
+  }
+
+  .info-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  .info-item a {
+    color: #b05cff;
+    text-decoration: none;
+  }
+
+  .info-title {
+    font-size: 28px;
+    color: #b05cff;
+    text-shadow: 0 0 10px #b05cff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- MENU ICON -->
+<div class="menu-btn" onclick="toggleSidebar()">☰</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="#dashboard">Dashboard</a>
+  <a href="#info">Info</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container" id="dashboard">
+  <h1>Website Demo</h1>
+
+  <!-- DEMO 1 -->
+  <div class="card">
+    <h2>Xentaur Ai</h2>
+    <iframe src="https://example.com"></iframe>
+    <a href="https://Xentaur.armansyah.xyz" target="_blank">Lihat Demo</a>
+  </div>
+
+  <!-- DEMO 2 -->
+  <div class="card">
+    <h2>Nama Demo 2</h2>
+    <iframe src="https://example.com"></iframe>
+    <a href="https://example.com" target="_blank">Lihat Demo</a>
+  </div>
+</div>
+
+<!-- INFO SECTION -->
+<div class="container" id="info">
+  <div class="info-section">
+
+    <div class="info-title">Info Ku</div>
+
+    <div class="info-item">
+      <img src="https://files.catbox.moe/rjg8l3.jpg">
+      WhatsApp: <a href="https://wa.me/6285126224316" target="_blank">+628 51 2622-4316</a>
+    </div>
+
+    <div class="info-item">
+      <img src="https://files.catbox.moe/9a6llg.jpg">
+      Instagram: <a href="https://instagram.com/xperia_xao" target="_blank">@xperia_xao</a>
+    </div>
+
+    <div class="info-item">
+      Grup Minecraft: <a href="#">https://chat.whatsapp.com/GKknKnd1n7VK6Dl6xFzE5o?mode=hqrc</a>
+    </div>
+
+    <div class="info-item">
+      Website: <a href="#">https://masih belom</a>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  function toggleSidebar(){
+    document.getElementById("sidebar").classList.toggle("open");
+  }
+</script>
+
+</body>
+</html>
